@@ -21,7 +21,7 @@ bool Book::operator<(const Book& other) const {
 }
 
 bool Book::operator>(const Book& other) const {
-    return title > other.title;
+    return title > other.title;   // ← أضفناها
 }
 
 std::ostream& operator<<(std::ostream& os, const Book& b) {
