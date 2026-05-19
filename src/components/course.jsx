@@ -1,28 +1,45 @@
 function Course() {
-    const course = {
-        name: "Full Stack Development",
-        parts: [
-            { name: "Fundamentals of React", exercises: 10 },
-            { name: "Using props to pass data", exercises: 7 },
-            { name: "State of a component", exercises: 14 }
-        ]
-    };
 
-    const total = course.parts.reduce((sum, part) => sum + part.exercises, 0);
+    const course = {
+        name: "Half Stack Development",
+        id: 1,
+
+        parts: [
+            { id: 1, name: "أساسيات React", exercises: 10 },
+            { id: 2, name: "Using props", exercises: 7 },
+            { id: 3, name: "State of component", exercises: 14 },
+            { id: 4, name: "Debugging React", exercises: 11 }
+        ]
+    }
+
+    const total = course.parts.reduce(
+        (sum, part) => sum + part.exercises, 0
+    )
 
     return (
+
         <div>
+
             <h2>{course.name}</h2>
+
             <ul>
-                {course.parts.map((part, index) => (
-                    <li key={index}>
-                        {part.name} - {part.exercises} تمرين
+
+                {course.parts.map(part => (
+
+                    <li key={part.id}>
+                        {part.name} : {part.exercises}
                     </li>
+
                 ))}
+
             </ul>
-            <p>المجموع: {total} تمرين</p>
+
+            <p><strong>المجموع: {total}</strong></p>
+
         </div>
-    );
+
+    )
+
 }
 
 export default Course;
